@@ -1,6 +1,7 @@
 ﻿@model List<ShopItem>
 
 <h4>All shop items</h4>
+
 <table class="table table-hover">
   <thead>
     <tr>
@@ -11,8 +12,8 @@
       <th scope="col">Remove</th>
     </tr>
    </thead>
-   <tbody
-        @foreach(var shopItem in @model)
+   <tbody>
+        @foreach(var shopItem in @Model)
         {
           <tr>
             <th scope="row"></th>

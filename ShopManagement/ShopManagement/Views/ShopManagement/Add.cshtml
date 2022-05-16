@@ -1,0 +1,15 @@
+﻿@model ShopItem
+
+<h3>Add an item</h3>
+
+@using (Html.BeginForm("Add", "ShopItem", FormMethod.Post))
+{
+	@Html.LabelFor(a => a.name)
+    @Html.TextBoxFor(a => a.name)
+
+    @Html.LabelFor(a => a.shopName)
+    @Html.TextBoxFor(a => a.shopName)
+
+    @Html.LabelFor(a => a.expiryDate)
+    @Html.TextBoxFor(a => a.expiryDate)
+}
