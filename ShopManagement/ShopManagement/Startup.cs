@@ -26,6 +26,7 @@ namespace ShopManagement
         {
             services.AddControllersWithViews();
             services.AddSingleton<ShopService>();
+            services.AddTransient<ShopService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

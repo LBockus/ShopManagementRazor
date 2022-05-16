@@ -6,7 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Views\ShopManagement\Index.cshtml" />
+    <Compile Remove="Views\ShopManagement\**" />
+    <Content Remove="Views\ShopManagement\**" />
+    <EmbeddedResource Remove="Views\ShopManagement\**" />
+    <None Remove="Views\ShopManagement\**" />
   </ItemGroup>
 
   <ItemGroup>
