@@ -20,7 +20,7 @@
             <td>@shopItem.name</td>
             <td>@shopItem.shopName</td>
             <td>@shopItem.expiryDate</td>
-            <td>@Html.ActionLink("Delete", "Delete", "ShopItem", new { Name = @shopItem.name})</td>
+            <td>@Html.ActionLink("Delete", "Remove", "Shop", new { Name = @shopItem.name})</td>
           </tr>
         }
     </tbody>

@@ -2,7 +2,7 @@
 
 <h3>Add an item</h3>
 
-@using (Html.BeginForm("Add", "ShopItem", FormMethod.Post))
+@using (Html.BeginForm("Add", "Shop", FormMethod.Post))
 {
 	@Html.LabelFor(a => a.name)
     @Html.TextBoxFor(a => a.name)
@@ -12,4 +12,7 @@
 
     @Html.LabelFor(a => a.expiryDate)
     @Html.TextBoxFor(a => a.expiryDate)
+    
+    <input type="submit" value="Submit"/>
+
 }
