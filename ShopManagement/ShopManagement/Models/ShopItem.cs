@@ -10,6 +10,6 @@ namespace ShopManagement.Models
     {
         public string name { get; set; }
         public string shopName { get; set; }
-        public DateTime expiryDate { get; set; }
+        public DateTime expiryDate { get; set; } = DateTime.Now;
     }
 }

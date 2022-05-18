@@ -4,14 +4,16 @@
 
 @using (Html.BeginForm("Add", "Shop", FormMethod.Post))
 {
-	@Html.LabelFor(a => a.name)
-    @Html.TextBoxFor(a => a.name)
+    <div class="form-group">
+	    @Html.Label("Merchandise name")
+        @Html.TextBoxFor(a => a.name)
 
-    @Html.LabelFor(a => a.shopName)
-    @Html.TextBoxFor(a => a.shopName)
+        @Html.Label("Shop name")
+        @Html.TextBoxFor(a => a.shopName)
 
-    @Html.LabelFor(a => a.expiryDate)
-    @Html.TextBoxFor(a => a.expiryDate)
+        @Html.Label("Expiry date")
+        @Html.TextBoxFor(a => a.expiryDate)
+    </div>
     
     <input type="submit" value="Submit"/>
 
