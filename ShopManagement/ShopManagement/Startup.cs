@@ -4,11 +4,13 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ShopManagement.Data;
 using ShopManagement.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace ShopManagement
 {
@@ -24,8 +26,12 @@ namespace ShopManagement
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            var defaultConnectionString = Configuration.GetConnectionString("Default");
+
             services.AddControllersWithViews();
-            services.AddSingleton<ShopService>();
+            services.AddTransient<ShopService>();
+            services.AddDbContext<DataContext>(c => c.UseSqlServer(defaultConnectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

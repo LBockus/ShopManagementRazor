@@ -16,11 +16,12 @@
         @foreach(var shopItem in @Model)
         {
           <tr>
-            <th scope="row"></th>
-            <td>@shopItem.name</td>
-            <td>@shopItem.shopName</td>
-            <td>@shopItem.expiryDate</td>
-            <td>@Html.ActionLink("Delete", "Remove", "Shop", new { Name = @shopItem.name})</td>
+            <th scope="row">@shopItem.Id</th>
+            <td>@shopItem.Name</td>
+            <td>@shopItem.ShopName</td>
+            <td>@shopItem.ExpiryDate</td>
+            <td>@Html.ActionLink("Edit", "Edit", "Shop", new {id = @shopItem.Id})</td>
+            <td>@Html.ActionLink("Delete", "Remove", "Shop", new { Name = @shopItem.Name})</td>
           </tr>
         }
     </tbody>

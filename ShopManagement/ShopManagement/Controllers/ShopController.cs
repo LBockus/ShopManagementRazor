@@ -27,15 +27,29 @@ namespace ShopManagement.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(ShopItem shopitem)
+        public IActionResult Add(ShopItem shopItem)
         {
-            _shopService.Add(shopitem);
+            _shopService.Add(shopItem);
                 return RedirectToAction("Index");
         }
 
         public IActionResult Remove(string name)
         {
             _shopService.Remove(name);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            ShopItem shopItem = _shopService.Get(id);
+            return View(shopItem);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(ShopItem shopItem)
+        {
+            _shopService.Edit(shopItem);
             return RedirectToAction("Index");
         }
     }
